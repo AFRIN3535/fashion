@@ -1,0 +1,8 @@
+.row-card{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.product-img{
+    height: 17rem;
+}
