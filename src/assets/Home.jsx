@@ -32,7 +32,9 @@ const Home = () => {
                                 <img src={item.image} className="card-img-top product-img" alt="..." />
                                 <div className="card-body">
                                     <h5 className="card-title ">{item.title.substring(0,12)}</h5>
-                                    <a href="#" className="btn btn-primary">Add to Cart</a>
+                                    <a href="#" className="btn btn-primary">Add to Cart
+                                      
+                                    </a>
                                 </div>
                             </div></div>
                     ))}</>

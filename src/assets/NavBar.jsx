@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-primary fixed-top">
-  <div className="container-fluid">
+  <div className="container-fluid px-3">
     <h1 className="navbar-brand text-white" style={{fontSize:"29px"}}>
       Fashion
     </h1>
@@ -22,24 +23,24 @@ const NavBar = () => {
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav m-auto">
         <li className="nav-item">
-          <a className="nav-link active text-white" aria-current="page" href="#">
+          <Link to="/" className="nav-link active text-white" aria-current="page" href="#">
             Home
-          </a>
+          </Link>
         </li>
         <li className="nav-item ">
-          <a className="nav-link text-white" href="#">
-            Features
-          </a>
+          <Link to="/Cart" className="nav-link text-white" href="#">
+            Cart
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-white" href="#">
-            Pricing
-          </a>
+          <Link to="/Login" className="nav-link text-white" href="#">
+            LogIn
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link disabled text-white" aria-disabled="true">
-            Disabled
-          </a>
+          <Link to="/SignUp" className="nav-link text-white">
+            SignUp
+          </Link>
         </li>
       </ul>
     </div>
