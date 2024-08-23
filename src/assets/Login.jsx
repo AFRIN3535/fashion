@@ -1,5 +1,6 @@
 import React from 'react'
 import "./credentials.css"
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   return (
@@ -33,7 +34,7 @@ const Login = () => {
   <button className='btn btn-outline-primary '>Login</button>
   </div>
   <hr/>
-  <h6 className='text-secondary'>don't have an account?<span>SignUp</span> </h6>
+  <h6 className='text-secondary'>don't have an account? <Link to="/Signup">SignUp</Link> </h6>
 
 </form>
 

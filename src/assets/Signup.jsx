@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Signup = () => {
   const [email,setEmail] = useState("")
@@ -10,10 +11,12 @@ const signupFun =async (e) => {
     const response = await axios.post("https://fashionbackend-yqpg.onrender.com/user/signup",{email,password})
     if(response){
       alert("Successfully signedup")
+      setEmail("")
+      setPassword("")
     }
   } catch (error) {
     console.error(error);
-    alert("Unabled to signup")
+    alert("already email taken")
   }
 }
 
@@ -26,7 +29,7 @@ const signupFun =async (e) => {
           <hr />
           <div className="form-floating mb-3 ">
             <input
-              type="email"
+              type="email" required
               onChange={(e)=> setEmail(e.target.value)}
               value={email}
               className="form-control"
@@ -37,7 +40,7 @@ const signupFun =async (e) => {
           </div>
           <div className="form-floating">
             <input
-              type="password"
+              type="password" required
               onChange={(e)=> setPassword(e.target.value)}
               value={password}
               className="form-control"
@@ -54,7 +57,7 @@ const signupFun =async (e) => {
             <button type='submit' className='btn btn-outline-success'>SignUp</button>
           </div>
           <hr/>
-          <h6 className='text-secondary'>already have an account?<span>Login</span> </h6>
+          <h6 className='text-secondary'>already have an account? <Link to="/Login">Login</Link> </h6>
         </form>
 
       </div>
