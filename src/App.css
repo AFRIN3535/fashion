@@ -1,8 +1,37 @@
-.row-card{
+.row-card {
     display: flex;
     justify-content: center;
     width: 100%;
 }
-.product-img{
+
+.product-img {
     height: 17rem;
 }
+
+
+/* Fashion title styling */
+
+#latest-title {
+    overflow: hidden;
+    border-right: 0.15rem solid rgb(206, 73, 16);
+    padding-right: 5px;
+    animation: typing 4s steps(40, end) infinite;
+    text-wrap: nowrap;
+    background: #121FCF;
+    background-image: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+ 

@@ -6,7 +6,7 @@ const NavBar = () => {
     <>
       <nav className="navbar navbar-expand-lg bg-primary fixed-top">
   <div className="container-fluid px-3">
-    <h1 className="navbar-brand text-white" style={{fontSize:"29px"}}>
+    <h1 className="navbar-brand text-white"  style={{fontSize:"29px"}}>
       Fashion
     </h1>
     <button 
