@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 const NavBar = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-primary fixed-top">
+      <nav className="navbar navbar-expand-lg bg-dark fixed-top p-1">
   <div className="container-fluid px-3">
-    <h1 className="navbar-brand text-white"  style={{fontSize:"29px"}}>
+    <h5 className="navbar-brand text-white"  style={{fontSize:"25px"}}>
       Fashion
-    </h1>
+    </h5>
     <button 
       className="navbar-toggler bg-white"
       type="button"
