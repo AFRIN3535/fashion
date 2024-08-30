@@ -14,7 +14,7 @@ const Home = () => {
         const response = await axios.get(api)
         if (response) {
           console.log(response);
-          setData(response.data.reverse())
+          setData(response.data.reverse().splice(1,28))
         }
       } catch (error) {
         console.error(error);
