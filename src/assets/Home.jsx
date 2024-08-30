@@ -1,28 +1,27 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+ 
+import React, { useContext, useEffect, useState } from 'react'
+import { cartContext } from '../App'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   // products api 
-  const api = "https://fashionkart-server.onrender.com/product/getproducts"
-  const [data, setData] = useState([])
+ 
+  const { cart, setCart , data  } = useContext(cartContext)
+  const [productId, setProductId] = useState([])
+ 
 
 
+  // items adding to the cart function 
+  const cartFunc = (itemId) => {
+    const product = data.find((item) => item._id === itemId)
+    setCart([...cart, { ...product, qty: 1 }])
+  }
+
+  // mapping product ids to new Array
   useEffect(() => {
-    // fetching products from server with axios library
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get(api)
-        if (response) {
-          console.log(response);
-          setData(response.data.reverse())
-        }
-      } catch (error) {
-        console.error(error);
-
-      }
-    }
-    fetchProducts()
-  }, [])
+    const ids = cart.map((item) => item._id)
+    setProductId(ids)
+  }, [cart])
 
 
 
@@ -41,9 +40,13 @@ const Home = () => {
                 <img src={item.image} className="card-img-top product-img" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title ">{item.title.substring(0, 12)}</h5>
-                  <a href="#" className="btn btn-primary">Add to Cart
+                  {productId.includes(item._id) ?
+                    <Link to="/Cart" className="btn btn-success">Go to Cart
 
-                  </a>
+                    </Link> :
+                    <button onClick={() => cartFunc(item._id)} className="btn btn-primary">Add to Cart
+                    </button>
+                  }
                 </div>
               </div></div>
           ))}</>
