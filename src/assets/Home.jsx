@@ -2,6 +2,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { cartContext } from '../App'
 import { Link } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify'
 
 const Home = () => {
   // products api 
@@ -15,6 +16,7 @@ const Home = () => {
   const cartFunc = (itemId) => {
     const product = data.find((item) => item._id === itemId)
     setCart([...cart, { ...product, qty: 1 }])
+    toast.success("Item added to the cart")
   }
 
   // mapping product ids to new Array
@@ -26,6 +28,15 @@ const Home = () => {
 
 
   return (
+    <>
+ <ToastContainer  position="bottom-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="light"
+        toastStyle={{ margin: '0 auto', width: '18rem' }}/>
     <div className='container-fluid text-center mt-5  pt-5'>
       <div style={{ display: "inline-block" }}>
         <h4 className='  text-center' id='latest-title'>Latest Products</h4>
@@ -76,6 +87,7 @@ const Home = () => {
           </div>}
       </div>
     </div>
+    </>
   )
 }
 
