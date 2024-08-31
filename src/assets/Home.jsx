@@ -35,7 +35,7 @@ const Home = () => {
         closeOnClick
         pauseOnHover
         draggable
-        theme="light"
+        theme="dark"
         toastStyle={{ margin: '0 auto', width: '18rem' }}/>
     <div className='container-fluid text-center mt-5  pt-5'>
       <div style={{ display: "inline-block" }}>
