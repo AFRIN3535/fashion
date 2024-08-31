@@ -12,8 +12,8 @@ import axios from 'axios'
 export const cartContext = createContext()
 
 function App() {
-  const [cart , setCart] = useState([])
   const [data, setData] = useState([])
+  const [cart , setCart] = useState([])
 
   const api = "https://fashionkart-server.onrender.com/product/getproducts"
 
